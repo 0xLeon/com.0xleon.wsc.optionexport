@@ -27,7 +27,7 @@ class OptionImportForm extends AbstractForm {
 	/**
 	 * @see	\wcf\page\AbstractPage::$neededPermissions
 	 */
-	public $neededPermissions = array('admin.system.canEditOption');
+	public $neededPermissions = array('admin.configuration.canEditOption');
 	
 	/**
 	 * upload file data
