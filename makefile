@@ -16,4 +16,4 @@ clean:
 distclean: clean
 	-rm -f com.0xleon.wsc.optionexport.tar
 
-.PHONY: distclean clean com.0xleon.wsc.optionexport.tar files.tar files_wcf.tar
+.PHONY: distclean clean com.0xleon.wsc.optionexport.tar files.tar acptemplates.tar
