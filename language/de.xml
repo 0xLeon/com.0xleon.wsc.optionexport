@@ -5,11 +5,11 @@
 	</category>
 	
 	<category name="wcf.acp.option">
-		<item name="wcf.acp.option.export"><![CDATA[Optionen sichern]]></item>
+		<item name="wcf.acp.option.export"><![CDATA[Sichern]]></item>
 		<item name="wcf.acp.option.export.download"><![CDATA[Sicherung der Optionen herunterladen]]></item>
 		<item name="wcf.acp.option.export.download.description"><![CDATA[Laden Sie eine Sicherung der Optionen auf Ihren lokalen Rechner herunter.]]></item>
 		
-		<item name="wcf.acp.option.import"><![CDATA[Optionen importieren]]></item>
+		<item name="wcf.acp.option.import"><![CDATA[Importieren]]></item>
 		<item name="wcf.acp.option.import.error.importFailed"><![CDATA[Die Optionen konnten nicht erfolgreich importiert werden.]]></item>
 		<item name="wcf.acp.option.import.success"><![CDATA[Die Optionen wurden erfolgreich importiert.]]></item>
 		<item name="wcf.acp.option.import.upload"><![CDATA[Sicherung der Optionen vom lokalen Computer hochladen]]></item>

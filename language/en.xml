@@ -5,11 +5,11 @@
 	</category>
 	
 	<category name="wcf.acp.option">
-		<item name="wcf.acp.option.export"><![CDATA[Download Options]]></item>
+		<item name="wcf.acp.option.export"><![CDATA[Download]]></item>
 		<item name="wcf.acp.option.export.download"><![CDATA[Download Options]]></item>
 		<item name="wcf.acp.option.export.download.description"><![CDATA[Downloads a backup of the configuration settings to your local machine. This is not a replacement for a backup!]]></item>
 		
-		<item name="wcf.acp.option.import"><![CDATA[Restore Options]]></item>
+		<item name="wcf.acp.option.import"><![CDATA[Restore]]></item>
 		<item name="wcf.acp.option.import.error.importFailed"><![CDATA[Unable to restore options.]]></item>
 		<item name="wcf.acp.option.import.success"><![CDATA[Options have been restored.]]></item>
 		<item name="wcf.acp.option.import.upload"><![CDATA[Upload Options]]></item>
