@@ -2,7 +2,7 @@
 <data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/acpMenu.xsd">
 	<import>
 		<acpmenuitem name="wcf.acp.menu.link.option.importAndExport">
-			<parent>wcf.acp.menu.link.option.management</parent>
+			<parent>wcf.acp.menu.link.option</parent>
 			<controller><![CDATA[wcf\acp\form\OptionImportForm]]></controller>
 		</acpmenuitem>
 	</import>
