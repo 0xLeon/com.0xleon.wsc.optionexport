@@ -7,21 +7,20 @@ use wcf\util\JSON;
 /**
  * Exports the options to an XML.
  * 
- * @author	Marcel Werk
+ * @author	Marcel Werk, Stefan Hahn
+ * @copyright	2016 Stefan Hahn
  * @copyright	2001-2015 WoltLab GmbH
  * @license	GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>
- * @package	com.woltlab.wcf
- * @subpackage	acp.action
- * @category	Suite Core
+ * @package	com.0xleon.wsc.optionexport
  */
 class OptionExportAction extends AbstractAction {
 	/**
-	 * @see	\wcf\action\AbstractAction::$neededPermissions
+	 * @inheritDoc
 	 */
 	public $neededPermissions = array('admin.configuration.canEditOption');
 	
 	/**
-	 * @see	\wcf\action\IAction::execute();
+	 * @inheritDoc
 	 */
 	public function execute() {
 		parent::execute();

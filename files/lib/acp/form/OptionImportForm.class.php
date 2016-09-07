@@ -12,20 +12,19 @@ use wcf\util\JSON;
  * Shows the option import form.
  * 
  * @author	Marcel Werk, Stefan Hahn
+ * @copyright	2016 Stefan Hahn
  * @copyright	2001-2015 WoltLab GmbH
  * @license	GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>
- * @package	com.woltlab.wcf
- * @subpackage	acp.form
- * @category	Community Framework
+ * @package	com.0xleon.wsc.optionexport
  */
 class OptionImportForm extends AbstractForm {
 	/**
-	 * @see	\wcf\page\AbstractPage::$activeMenuItem
+	 * @inheritDoc
 	 */
 	public $activeMenuItem = 'wcf.acp.menu.link.option.importAndExport';
 	
 	/**
-	 * @see	\wcf\page\AbstractPage::$neededPermissions
+	 * @inheritDoc
 	 */
 	public $neededPermissions = array('admin.configuration.canEditOption');
 	
@@ -42,7 +41,7 @@ class OptionImportForm extends AbstractForm {
 	public $options = array();
 	
 	/**
-	 * @see	\wcf\form\IForm::readFormParameters()
+	 * @inheritDoc
 	 */
 	public function readFormParameters() {
 		parent::readFormParameters();
@@ -51,7 +50,7 @@ class OptionImportForm extends AbstractForm {
 	}
 	
 	/**
-	 * @see	\wcf\form\IForm::validate()
+	 * @inheritDoc
 	 */
 	public function validate() {
 		parent::validate();
@@ -76,7 +75,7 @@ class OptionImportForm extends AbstractForm {
 	}
 	
 	/**
-	 * @see	\wcf\form\IForm::save()
+	 * @inheritDoc
 	 */
 	public function save() {
 		parent::save();
@@ -91,7 +90,7 @@ class OptionImportForm extends AbstractForm {
 	}
 	
 	/**
-	 * @see	\wcf\page\IPage::show()
+	 * @inheritDoc
 	 */
 	public function show() {
 		// check master password
