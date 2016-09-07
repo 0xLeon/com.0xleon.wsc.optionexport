@@ -6,12 +6,12 @@ use wcf\system\exception\SystemException;
 use wcf\system\exception\UserInputException;
 use wcf\system\WCF;
 use wcf\system\WCFACP;
-use wcf\util\XML;
+use wcf\util\JSON;
 
 /**
  * Shows the option import form.
  * 
- * @author	Marcel Werk
+ * @author	Marcel Werk, Stefan Hahn
  * @copyright	2001-2015 WoltLab GmbH
  * @license	GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>
  * @package	com.woltlab.wcf
@@ -63,12 +63,8 @@ class OptionImportForm extends AbstractForm {
 			}
 			
 			try {
-				$xml = new XML();
-				$xml->load($this->optionImport['tmp_name']);
-				$xpath = $xml->xpath();
-				foreach ($xpath->query('/options/option') as $option) {
-					$this->options[$xpath->query('name', $option)->item(0)->nodeValue] = $xpath->query('value', $option)->item(0)->nodeValue;
-				}
+				$content = file_get_contents($this->optionImport['tmp_name']);
+				$this->options = JSON::decode($content);
 			}
 			catch (SystemException $e) {
 				throw new UserInputException('optionImport', 'importFailed');

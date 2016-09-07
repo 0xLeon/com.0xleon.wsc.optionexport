@@ -2,7 +2,7 @@
 namespace wcf\acp\action;
 use wcf\action\AbstractAction;
 use wcf\data\option\Option;
-use wcf\util\StringUtil;
+use wcf\util\JSON;
 
 /**
  * Exports the options to an XML.
@@ -27,29 +27,26 @@ class OptionExportAction extends AbstractAction {
 		parent::execute();
 		
 		// header
-		@header('Content-type: text/xml');
+		@header('Content-type: application/json');
 		
 		// file name
-		@header('Content-disposition: attachment; filename="options.xml"');
+		@header('Content-disposition: attachment; filename="options.json"');
 			
 		// no cache headers
 		@header('Pragma: no-cache');
 		@header('Expires: 0');
 		
-		// content
-		echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<options>\n";
-		
 		$options = Option::getOptions();
+		$outputOptions = [];
+		
 		foreach ($options as $option) {
-			if ($option->hidden) continue; // ignore hidden options
+			if ($option->hidden) continue;
 			
-			echo "\t<option>\n";
-			echo "\t\t<name><![CDATA[".StringUtil::escapeCDATA($option->optionName)."]]></name>\n";
-			echo "\t\t<value><![CDATA[".StringUtil::escapeCDATA($option->optionValue)."]]></value>\n";
-			echo "\t</option>\n";
+			$outputOptions[$option->optionName] = $option->optionValue;
 		}
 		
-		echo '</options>';
+		echo JSON::encode($outputOptions);
+		
 		$this->executed();
 		exit;
 	}
