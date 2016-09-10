@@ -26,7 +26,7 @@ class OptionImportForm extends AbstractForm {
 	/**
 	 * @inheritDoc
 	 */
-	public $neededPermissions = array('admin.configuration.canEditOption');
+	public $neededPermissions = ['admin.configuration.canEditOption'];
 	
 	/**
 	 * upload file data
@@ -38,7 +38,7 @@ class OptionImportForm extends AbstractForm {
 	 * list of options
 	 * @var	array
 	 */
-	public $options = array();
+	public $options = [];
 	
 	/**
 	 * @inheritDoc
@@ -81,7 +81,7 @@ class OptionImportForm extends AbstractForm {
 		parent::save();
 		
 		// save
-		$this->objectAction = new OptionAction(array(), 'import', array('data' => $this->options));
+		$this->objectAction = new OptionAction([], 'import', ['data' => $this->options]);
 		$this->objectAction->executeAction();
 		$this->saved();
 		

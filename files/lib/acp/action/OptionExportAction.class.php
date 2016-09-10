@@ -17,7 +17,7 @@ class OptionExportAction extends AbstractAction {
 	/**
 	 * @inheritDoc
 	 */
-	public $neededPermissions = array('admin.configuration.canEditOption');
+	public $neededPermissions = ['admin.configuration.canEditOption'];
 	
 	/**
 	 * @inheritDoc
