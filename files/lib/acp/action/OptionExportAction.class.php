@@ -44,7 +44,7 @@ class OptionExportAction extends AbstractAction {
 			$outputOptions[$option->optionName] = $option->optionValue;
 		}
 		
-		echo JSON::encode($outputOptions);
+		echo JSON::encode($outputOptions, JSON_PRETTY_PRINT);
 		
 		$this->executed();
 		exit;
