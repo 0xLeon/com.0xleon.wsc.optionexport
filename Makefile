@@ -1,7 +1,7 @@
 all: com.0xleon.wsc.optionexport.tar
 
-com.0xleon.wsc.optionexport.tar: files.tar acptemplates.tar *.xml language/*.xml
-	tar cvf com.0xleon.wsc.optionexport.tar --numeric-owner --exclude com.0xleon.wsc.optionexport.tar --exclude-vcs --exclude=files --exclude=acptemplates --exclude=makefile -- *
+com.0xleon.wsc.optionexport.tar: files.tar acptemplates.tar *.xml LICENSE language/*.xml
+	tar cvf com.0xleon.wsc.optionexport.tar --numeric-owner --exclude-vcs  -- files.tar acptemplates.tar *.xml LICENSE language/*.xml
 
 files.tar: files/*
 	tar cvf files.tar --exclude-vcs --transform='s,files/,,' -- files/*
@@ -16,4 +16,4 @@ clean:
 distclean: clean
 	-rm -f com.0xleon.wsc.optionexport.tar
 
-.PHONY: distclean clean com.0xleon.wsc.optionexport.tar files.tar acptemplates.tar
+.PHONY: distclean clean
