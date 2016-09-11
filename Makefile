@@ -1,25 +1,27 @@
+include buildconfig
+
 rwildcard=$(wildcard $1$2)$(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))
 
-all: build/com.0xleon.wsc.optionexport.tar.gz
+all: $(BUILDDIR)$(PACKAGENAME).tar.gz
 
-build/com.0xleon.wsc.optionexport.tar.gz: build/com.0xleon.wsc.optionexport.tar
-	gzip -kv9 build/com.0xleon.wsc.optionexport.tar
+$(BUILDDIR)$(PACKAGENAME).tar.gz: $(BUILDDIR)$(PACKAGENAME).tar
+	gzip -kvf9 $<
 
-build/com.0xleon.wsc.optionexport.tar: build/files.tar build/acptemplates.tar *.xml LICENSE language/*.xml
-	tar cvf build/com.0xleon.wsc.optionexport.tar --numeric-owner --exclude-vcs --transform='s,build/,,' -- build/files.tar build/acptemplates.tar *.xml LICENSE language/*.xml
+$(BUILDDIR)$(PACKAGENAME).tar: $(BUILDDIR)files.tar $(BUILDDIR)acptemplates.tar *.xml LICENSE language/*.xml
+	tar cvf $@ --numeric-owner --exclude-vcs --transform='s,$(BUILDDIR),,' -- $^
 
-build/files.tar: $(call rwildcard,files/,*.*)
-	tar cvf build/files.tar --exclude-vcs --transform='s,files/,,' -- files/*
+$(BUILDDIR)files.tar: $(call rwildcard,files/,*.*)
+	tar cvf $@ --exclude-vcs --transform='s,^[^/]*/,,' --show-transformed-names -- $^
 
-build/acptemplates.tar: acptemplates/*.tpl
-	tar cvf build/acptemplates.tar --exclude-vcs --transform='s,acptemplates/,,' -- acptemplates/*
+$(BUILDDIR)%.tar: %/*
+	tar cvf $@ --exclude-vcs --transform='s,^[^/]*/,,' --show-transformed-names -- $^
 
 clean:
-	-rm -f build/files.tar
-	-rm -f build/acptemplates.tar
+	-rm -f $(BUILDDIR)files.tar
+	-rm -f $(BUILDDIR)acptemplates.tar
 
 distclean: clean
-	-rm -f build/com.0xleon.wsc.optionexport.tar
-	-rm -f build/com.0xleon.wsc.optionexport.tar.gz
+	-rm -f $(BUILDDIR)$(PACKAGENAME).tar
+	-rm -f $(BUILDDIR)$(PACKAGENAME).tar.gz
 
-.PHONY: distclean clean
+.PHONY: all distclean clean
