@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/language.xsd" languagecode="de">
+<language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/language.xsd" languagecode="de" countrycode="de" languagename="Deutsch">
 	<category name="wcf.acp.menu">
 		<item name="wcf.acp.menu.link.option.importAndExport"><![CDATA[Sichern &amp; Wiederherstellen]]></item>
 	</category>
 	
 	<category name="wcf.acp.option">
-		<item name="wcf.acp.option.export"><![CDATA[Sichern]]></item>
+		<item name="wcf.acp.option.export"><![CDATA[Exportieren]]></item>
 		<item name="wcf.acp.option.export.download"><![CDATA[Sicherung der Optionen herunterladen]]></item>
-		<item name="wcf.acp.option.export.download.description"><![CDATA[Laden Sie eine Sicherung der Optionen auf Ihren lokalen Rechner herunter.]]></item>
+		<item name="wcf.acp.option.export.download.description"><![CDATA[{if LANGUAGE_USE_INFORMAL_VARIANT}Lade{else}Laden Sie{/if} eine Sicherung der Optionen auf {if LANGUAGE_USE_INFORMAL_VARIANT}deinen{else}Ihren{/if} lokalen Rechner herunter. Dies ist kein Ersatz für ein vollständiges Backup!]]></item>
 		
 		<item name="wcf.acp.option.import"><![CDATA[Importieren]]></item>
 		<item name="wcf.acp.option.import.error.importFailed"><![CDATA[Die Optionen konnten nicht erfolgreich importiert werden.]]></item>
 		<item name="wcf.acp.option.import.success"><![CDATA[Die Optionen wurden erfolgreich importiert.]]></item>
-		<item name="wcf.acp.option.import.upload"><![CDATA[Sicherung der Optionen vom lokalen Computer hochladen]]></item>
-		<item name="wcf.acp.option.import.upload.description"><![CDATA[Wählen Sie eine Sicherung der Optionen von Ihrem lokalen Rechner aus.]]></item>
-		<item name="wcf.acp.option.importAndExport"><![CDATA[Optionen sichern &amp; wiederherstellen]]></item>
+		<item name="wcf.acp.option.import.upload"><![CDATA[Sicherung der Optionen hochladen]]></item>
+		<item name="wcf.acp.option.import.upload.description"><![CDATA[{if LANGUAGE_USE_INFORMAL_VARIANT}Wähle{else}Wählen Sie{/if} eine Sicherung der Optionen von {if LANGUAGE_USE_INFORMAL_VARIANT}deinem{else}Ihrem{/if} lokalen Rechner aus.]]></item>
+		<item name="wcf.acp.option.importAndExport"><![CDATA[Optionen importieren &amp; exportieren]]></item>
 	</category>
 </language>

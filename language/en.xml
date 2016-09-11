@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/language.xsd" languagecode="en">
+<language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/language.xsd" languagecode="en" countrycode="gb" languagename="English">
 	<category name="wcf.acp.menu">
-		<item name="wcf.acp.menu.link.option.importAndExport"><![CDATA[Import &amp; Export]]></item>
+		<item name="wcf.acp.menu.link.option.importAndExport"><![CDATA[Save &amp; Restore]]></item>
 	</category>
 	
 	<category name="wcf.acp.option">
-		<item name="wcf.acp.option.export"><![CDATA[Download]]></item>
+		<item name="wcf.acp.option.export"><![CDATA[Export]]></item>
 		<item name="wcf.acp.option.export.download"><![CDATA[Download Options]]></item>
 		<item name="wcf.acp.option.export.download.description"><![CDATA[Downloads a backup of the configuration settings to your local machine. This is not a replacement for a backup!]]></item>
 		
-		<item name="wcf.acp.option.import"><![CDATA[Restore]]></item>
-		<item name="wcf.acp.option.import.error.importFailed"><![CDATA[Unable to restore options.]]></item>
-		<item name="wcf.acp.option.import.success"><![CDATA[Options have been restored.]]></item>
+		<item name="wcf.acp.option.import"><![CDATA[Import]]></item>
+		<item name="wcf.acp.option.import.error.importFailed"><![CDATA[Unable to import options.]]></item>
+		<item name="wcf.acp.option.import.success"><![CDATA[Options have been imported.]]></item>
 		<item name="wcf.acp.option.import.upload"><![CDATA[Upload Options]]></item>
 		<item name="wcf.acp.option.import.upload.description"><![CDATA[Upload previously downloaded options file.]]></item>
-		<item name="wcf.acp.option.importAndExport"><![CDATA[Save &amp; Restore Options]]></item>
+		<item name="wcf.acp.option.importAndExport"><![CDATA[Import &amp; Export Options]]></item>
 	</category>
 </language>
