@@ -1,21 +1,21 @@
 rwildcard=$(wildcard $1$2)$(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))
 
-all: com.0xleon.wsc.optionexport.tar
+all: build/com.0xleon.wsc.optionexport.tar
 
-com.0xleon.wsc.optionexport.tar: files.tar acptemplates.tar *.xml LICENSE language/*.xml
-	tar cvf com.0xleon.wsc.optionexport.tar --numeric-owner --exclude-vcs  -- files.tar acptemplates.tar *.xml LICENSE language/*.xml
+build/com.0xleon.wsc.optionexport.tar: build/files.tar build/acptemplates.tar *.xml LICENSE language/*.xml
+	tar cvf build/com.0xleon.wsc.optionexport.tar --numeric-owner --exclude-vcs --transform='s,build/,,' -- build/files.tar build/acptemplates.tar *.xml LICENSE language/*.xml
 
-files.tar: $(call rwildcard,files/,*.*)
-	tar cvf files.tar --exclude-vcs --transform='s,files/,,' -- files/*
+build/files.tar: $(call rwildcard,files/,*.*)
+	tar cvf build/files.tar --exclude-vcs --transform='s,files/,,' -- files/*
 
-acptemplates.tar: acptemplates/*.tpl
-	tar cvf acptemplates.tar --exclude-vcs --transform='s,acptemplates/,,' -- acptemplates/*
+build/acptemplates.tar: acptemplates/*.tpl
+	tar cvf build/acptemplates.tar --exclude-vcs --transform='s,acptemplates/,,' -- acptemplates/*
 
 clean:
-	-rm -f files.tar
-	-rm -f acptemplates.tar
+	-rm -f build/files.tar
+	-rm -f build/acptemplates.tar
 
 distclean: clean
-	-rm -f com.0xleon.wsc.optionexport.tar
+	-rm -f build/com.0xleon.wsc.optionexport.tar
 
 .PHONY: distclean clean
