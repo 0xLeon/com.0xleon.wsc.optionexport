@@ -29,7 +29,7 @@ class OptionExportAction extends AbstractAction {
 		@header('Content-type: application/json');
 		
 		// file name
-		@header('Content-disposition: attachment; filename="options.json"');
+		@header('Content-disposition: attachment; filename="options-' . gmdate('Y-m-d-H-i-s', TIME_NOW) . '.json"');
 			
 		// no cache headers
 		@header('Pragma: no-cache');
