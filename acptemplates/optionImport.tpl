@@ -1,13 +1,5 @@
 {include file='header' pageTitle='wcf.acp.option.importAndExport'}
 
-<script data-relocate="true">
-	//<![CDATA[
-	$(function() {
-		WCF.TabMenu.init();
-	});
-	//]]>
-</script>
-
 <header class="contentHeader">
 	<div class="contentHeaderTitle">
 		<h1 class="contentTitle">{lang}{@$pageTitle}{/lang}</h1>
